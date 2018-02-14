@@ -1,0 +1,54 @@
+{
+  "name": "vscode-dependency-vulnerabilities",
+  "displayName": "Dependency Vulnerabilities Checker",
+  "description": "This extension allows you to check for vulnerabilities in your dependencies.",
+  "version": "1.0.0",
+  "publisher": "eliostruyf",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.checkDependencies",
+    "workspaceContains:./package.json"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.checkDependencies",
+        "title": "Check for dependency vulnerabilities"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "@types/request": "^2.47.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6"
+  },
+  "dependencies": {
+    "request": "2.83.0"
+  },
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/estruyf/vscode-dependency-vulnerabilities"
+  },
+  "keywords": [
+    "node",
+    "dependencies",
+    "vulnerabilities"
+  ]
+}
