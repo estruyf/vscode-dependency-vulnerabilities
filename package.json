@@ -43,8 +43,8 @@
   },
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/estruyf/vscode-dependency-vulnerabilities"
+    "type": "git",
+    "url": "https://github.com/estruyf/vscode-dependency-vulnerabilities"
   },
   "keywords": [
     "node",

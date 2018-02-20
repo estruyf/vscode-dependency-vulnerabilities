@@ -58,7 +58,7 @@ class VulnerabilityExtension {
             const pkgLockContents = await FilesHelper.readFile(pkgLockFilePath);
 
             // Do the security check
-            const securityResult = await SecurityCheck.check(pkgContents, shrinkwrapContents, pkgLockContents) as string[];
+            const securityResult = await SecurityCheck.check(pkgContents, shrinkwrapContents, pkgLockContents, LogType.full) as string[];
 
             // Check how many vulnerabilities were found
             if (securityResult) {
@@ -73,7 +73,11 @@ class VulnerabilityExtension {
                 }
             }
         } catch (e) {
-            vscode.window.showErrorMessage(e);
+            if (e.message) {
+                vscode.window.showErrorMessage(e.message);
+            } else {
+                vscode.window.showErrorMessage('Sorry, something went wrong.');
+            }
         }
     }
 

@@ -2,11 +2,11 @@
 
 This extension allows you to check for known vulnerabilities in your dependencies against the Node Security Platform [https://nodesecurity.io/](https://nodesecurity.io/).
 
-It allows you to do a **complete** check which takes your `package.json`, `npm-shrinkwrap.json`, and `package-lock.json` files and checks it against the NSP API.
+It allows you to do a **full** check which takes your `package.json`, `npm-shrinkwrap.json`, and `package-lock.json` files and checks it against the NSP API.
 
 ![Shows a detailed vulnerabilities output](./screenshots/dependency-output.png)
 
-It also does some automated checks for the `package.json` file when this gets updated.
+Or it can do automated checks while making changes in your `package.json` file.
 
 ![Highlights modules with vulnerabilities](./screenshots/module-warnings.png)
 
