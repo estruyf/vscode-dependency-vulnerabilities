@@ -67,7 +67,8 @@ export default class SecurityCheck {
 
         if (body) {
           const result: IVulnerabilities[] = JSON.parse(body);
-          const resultOutput = result.map(vulnerability => {
+          // Filter out all duplicates
+          const resultOutput = result.filter((vulnerability, pos, self) => self.indexOf(vulnerability) === pos).map(vulnerability => {
             if (type === LogType.full) {
               return `
 Vulnerability found in: ${vulnerability.module}@${vulnerability.version}
